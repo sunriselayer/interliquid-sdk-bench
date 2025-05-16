@@ -230,8 +230,19 @@ pub fn setup_bench() -> Vec<u8> {
         get_child_node_fragment_and_hash_from_db(key, index, &hash_db)
     };
 
-    let leaf_key = vec![Nibble::from(1), Nibble::from(2), Nibble::from(3)];
-    let leaf_keys = BTreeSet::from([leaf_key.clone()]);
+    let leaf_key1 = vec![Nibble::from(1), Nibble::from(2), Nibble::from(3)];
+    let leaf_key2 = vec![Nibble::from(2), Nibble::from(3), Nibble::from(4)];
+    let leaf_key3 = vec![Nibble::from(3), Nibble::from(4), Nibble::from(5)];
+    let leaf_key4 = vec![Nibble::from(1), Nibble::from(2), Nibble::from(4)];
+    let leaf_key5 = vec![Nibble::from(2), Nibble::from(3), Nibble::from(5)];
+    let leaf_key6 = vec![Nibble::from(3), Nibble::from(4), Nibble::from(6)];
+    let leaf_key7 = vec![Nibble::from(3), Nibble::from(4), Nibble::from(7)];
+    let leaf_key8 = vec![Nibble::from(3), Nibble::from(4), Nibble::from(8)];
+    let leaf_key9 = vec![Nibble::from(3), Nibble::from(4), Nibble::from(9)];
+    let leaf_keys = BTreeSet::from([
+        leaf_key1, leaf_key2, leaf_key3, leaf_key4, leaf_key5, leaf_key6, leaf_key7, leaf_key8,
+        leaf_key9,
+    ]);
     let proof = NibblePatriciaTrieRootPath::from_leafs(
         leaf_keys,
         get_node,
