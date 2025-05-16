@@ -1,7 +1,11 @@
 [package]
-name = "fibonacci-lib"
+name = "commit-state-lib"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-alloy-sol-types = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+borsh = { workspace = true }
+borsh-derive = { workspace = true }
